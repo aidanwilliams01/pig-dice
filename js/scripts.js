@@ -25,6 +25,17 @@ function roll(playerTurn) {
   }
 }
 
+function hold(playerTurn) {
+  if (playerTurn === 1) {
+    score1.totalScore += score1.turnScore;
+    score1.turnScore = 0;
+  }
+  else {
+    score2.totalScore += score2.turnScore;
+    score1.turnScore = 0;
+  }
+}
+
 function onPageLoad() {
   const form = document.querySelector("form");
   let score1 = new Score(0, 0);
@@ -37,10 +48,10 @@ function onPageLoad() {
       roll(playerTurn);
     }
     else {
-      
+      hold(playerTurn);
     }
-    document.querySelector("p").removeAttribute("class");
-    document.querySelector("p").innerText = outputString;
+    // document.querySelector("p").removeAttribute("class");
+    // document.querySelector("p").innerText = outputString;
   }
   form.addEventListener("submit", formSubmission);
 }

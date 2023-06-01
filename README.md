@@ -18,3 +18,13 @@ let score1 = new Score(0, 0)
 roll(1)
 score1
 Expected Output: Score {totalScore: 0, turnScore: 3}
+
+Describe: hold(playerTurn)
+
+Test: It should modify the relevant object by adding the turnScore to the totalScore.
+Code:
+let score1 = new Score(0, 0)
+roll(1)
+hold(1)
+score1
+Expected Output: Score {totalScore: 3, turnScore: 3}
